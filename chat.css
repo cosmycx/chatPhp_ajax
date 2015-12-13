@@ -1,0 +1,29 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #eee;
+}
+#messages{
+	padding: 25px;
+	width: 600px;
+	height: 500px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid #333;
+}
+#enterMessage{
+	width: 600px;
+	padding: 25px;
+	margin: 0 auto;
+	border: 1px solid #333;
+	background-color: #ddd;
+	min-height: 35px;
+	overflow: hidden;
+}
+input{
+	min-height: 30px;
+	width: 400px;
+}
+button{
+	padding: 9px;
+}

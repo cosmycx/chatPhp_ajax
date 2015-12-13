@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='chat.css'>
+<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+</head>
+
+<body>
+	<div id='messages'></div>
+
+	<div id='enterMessage'>
+		<input id='chatMessage' type='text'/>
+		<button onclick='sendMessage();'>Send</button>
+	</div>
+
+<script>
+
+	setInterval(function(){ longPool(); }, 500);
+
+	function longPool(){
+		$.ajax({
+			url: 'chat.php',
+			type: 'POST',
+			data: 'chat="chat"',
+			success: function(data){
+
+				$('#messages').html(data);
+
+			}
+
+		})//.ajax
+	}//.longPool
+
+	function sendMessage(){
+
+		var mess = $('#chatMessage').val();
+		$('#chatMessage').val('');
+
+		$.ajax({
+			url: 'chat.php',
+			type: 'POST',
+			data: 'mess='+mess,
+			success: function(response){
+				console.log('ajax ok');
+				console.log(response);
+			}
+
+		});//.ajax
+	}//.sendMessage
+
+</script>
+</body>
+</html>
